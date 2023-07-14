@@ -1,0 +1,21 @@
+spring:
+  datasource:
+    url: jdbc:h2:tcp://localhost/~/jpashop #;MVCC=TRUE 넣으면 에러남???
+    username: sa
+    password:
+    driver-class-name: org.h2.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: create
+    properties:
+      hibernate:
+#        show_sql:  true #콘솔을 통해 출력
+        format_sql: true
+#        IN 절에 들어가는 최대 개수(그만큼 for loop를 돎)
+        default_batch_fetch_size: 100
+
+logging:
+  level:
+    org.hibernate.SQL: debug #logger를 통해서 출력
+    org.hibernate.type: trace
